@@ -1,18 +1,18 @@
 {% set name = "py-droplets" %}
-{% set version = "0.20.0" %}
+{% set version = "0.21.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/py-droplets-{{ version }}.tar.gz
-  sha256: a3d70d27af30babda952c30801aac6eb38e577a3d610b26028c3b7a53818b1a9
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 2f5a9c6efec20a2a75c93e3612a05bf26c39dcd65c2012d3d82350e924a1dea6
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
