@@ -6,17 +6,17 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: 2f5a9c6efec20a2a75c93e3612a05bf26c39dcd65c2012d3d82350e924a1dea6
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 2
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - pip
     - setuptools_scm
   run:
@@ -24,13 +24,14 @@ requirements:
     - matplotlib-base >=3.1
     - numba >=0.59
     - numpy >=1.23
-    - python >=3.9
+    - python >={{ python_min }}
     - py-pde >=0.39
     - scipy >=1.4
 
 test:
   requires:
     - pip
+    - python {{ python_min }}
   imports:
     - droplets
   commands:
