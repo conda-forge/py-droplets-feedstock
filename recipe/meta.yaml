@@ -1,5 +1,5 @@
 {% set name = "py-droplets" %}
-{% set version = "0.22.0" %}
+{% set version = "0.23.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: aaa394bee55bfe9bcefb58ef4bab5665274f462e96e8dbd3f655c5a8de64d5f1
+  sha256: d217c332f094bcc144946b7c8cf129e61a8607586cf597ab812356823e104fd7
 
 build:
   noarch: python
